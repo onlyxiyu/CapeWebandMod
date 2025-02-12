@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>- Cape System</title>
+    <style>
+        .register-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register-header h2 {
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .register-header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1e3c72;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input:focus {
+            border-color: #23a6d5;
+            box-shadow: 0 0 0 3px rgba(35, 166, 213, 0.1);
+            outline: none;
+        }
+
+        .btn-register {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #23a6d5, #23d5ab);
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(35, 166, 213, 0.3);
+        }
+
+        .btn-register:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .login-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .login-link a {
+            color: #23a6d5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .login-link a:hover {
+            color: #1e3c72;
+        }
+
+        .qq-group-link {
+            color: #12B7F5;  /* QQ*/
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .qq-group-link:hover {
+            color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        .qq-group-link i {
+            font-size: 1.2em;
+        }
+
+        .message {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .message.success {
+            background: linear-gradient(135deg, #84fab0, #8fd3f4);
+            color: #0c5460;
+        }
+
+        .message.error {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #721c24;
+        }
+
+        .form-requirements {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .register-container {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="register-container">
+        <div class="register-header">
+            <h2></h2>
+            <p></p>
+        </div>
+
+        <div id="registerMessage" class="message"></div>
+
+        <form id="registerForm">
+            <div class="form-group">
+                <label></label>
+                <input type="text" id="username" required/>
+                <div class="form-requirements">
+                    2-20
+                </div>
+            </div>
+            <div class="form-group">
+                <label></label>
+                <input type="password" id="password" required/>
+                <div class="form-requirements">
+                    6-20
+                </div>
+            </div>
+            <div class="form-group">
+                <label>URL (</label>
+                <input type="text" id="url"/>
+                <div class="form-requirements">
+
+                </div>
+            </div>
+            <button type="submit" class="btn-register" id="registerBtn"></button>
+        </form>
+
+        <div class="login-link">
+            <a href="/login"></a>
+            <span style="margin: 0 10px">|</span>
+            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=AEnqQs8gBlAja3bGkPH9hpkYjbO3QEhD&authKey=hWGtaaIn%2F3Q1qTgWm5aJNsRY%2F4nRkDr7XU5lBke%2FZJO5axTAJNxGiXktcMGg3e%2FU&noverify=0&group_code=426345022"
+               target="_blank"
+               class="qq-group-link">
+                <i class="fab fa-qq"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('registerBtn');
+        const msgDiv = document.getElementById('registerMessage');
+
+        btn.disabled = true;
+        btn.textContent = ';
+
+        const formData = {
+            username: document.getElementById('username').value,
+            password: document.getElementById('password').value,
+            url: document.getElementById('url').value
+        };
+
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                msgDiv.style.display = 'block';
+                if (data.success) {
+                    msgDiv.className = 'message success';
+                    msgDiv.textContent = ';
+                    this.reset();
+                } else {
+                    msgDiv.className = 'message error';
+                    msgDiv.textContent = data.message || ';
+                }
+                btn.disabled = false;
+                btn.textContent = ';
+            })
+            .catch(error => {
+                msgDiv.style.display = 'block';
+                msgDiv.className = 'message error';
+                msgDiv.textContent = ';
+                btn.disabled = false;
+                btn.textContent = ';
+            });
+    });
+</script>
+</body>
+</html>

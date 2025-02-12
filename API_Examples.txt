@@ -1,0 +1,161 @@
+Cape Spring Boot API 示例文档
+=========================
+
+1. 获取所有用户
+-----------------
+请求:
+GET http://localhost:8080/api/users
+
+响应:
+{
+    [
+        {
+            "id": 1,
+            "username": "adminOPxiyu",
+            "url": "http://example.com",
+            "role": "ROLE_ADMIN",
+            "deleteAt": null
+        },
+        {
+            "id": 2,
+            "username": "test_user",
+            "url": "http://example.com",
+            "role": "ROLE_USER",
+            "deleteAt": null
+        }
+    ]
+}
+
+2. 获取单个用户
+-----------------
+请求:
+GET http://localhost:8080/api/users/adminOPxiyu
+
+响应:
+{
+    "id": 1,
+    "username": "adminOPxiyu",
+    "url": "http://example.com",
+    "role": "ROLE_ADMIN",
+    "deleteAt": null
+}
+
+3. 创建新用户
+-----------------
+请求:
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "username": "new_user",
+    "password": "password123",
+    "url": "http://example.com"
+}
+
+响应:
+{
+    "id": 3,
+    "username": "new_user",
+    "url": "http://example.com",
+    "role": "ROLE_USER",
+    "deleteAt": null
+}
+
+4. 更新用户URL
+-----------------
+请求:
+PUT http://localhost:8080/api/users/test_user
+Content-Type: application/json
+
+{
+    "url": "http://new-example.com"
+}
+
+响应:
+{
+    "id": 2,
+    "username": "test_user",
+    "url": "http://new-example.com",
+    "role": "ROLE_USER",
+    "deleteAt": null
+}
+
+5. 删除用户
+-----------------
+请求:
+DELETE http://localhost:8080/api/users/test_user
+
+响应:
+{
+    "message": "User deleted successfully"
+}
+
+6. 设置定时删除
+-----------------
+请求:
+POST http://localhost:8080/api/users/test_user/schedule-delete
+Content-Type: application/json
+
+{
+    "minutes": 30
+}
+
+响应:
+{
+    "message": "Deletion scheduled"
+}
+
+错误响应示例
+-----------------
+1. 用户不存在:
+{
+    "error": "User not found"
+}
+
+2. 参数错误:
+{
+    "error": "Valid minutes value is required"
+}
+
+3. URL缺失:
+{
+    "error": "URL is required"
+}
+
+使用curl测试命令
+-----------------
+1. 获取所有用户:
+curl http://localhost:8080/api/users
+
+2. 获取单个用户:
+curl http://localhost:8080/api/users/adminOPxiyu
+
+3. 创建新用户:
+curl -X POST http://localhost:8080/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"username":"new_user","password":"password123","url":"http://example.com"}'
+
+4. 更新用户URL:
+curl -X PUT http://localhost:8080/api/users/test_user \
+  -H "Content-Type: application/json" \
+  -d '{"url":"http://new-example.com"}'
+
+5. 删除用户:
+curl -X DELETE http://localhost:8080/api/users/test_user
+
+6. 设置定时删除:
+curl -X POST http://localhost:8080/api/users/test_user/schedule-delete \
+  -H "Content-Type: application/json" \
+  -d '{"minutes":30}'
+
+注意事项
+-----------------
+1. 所有请求都需要确保Content-Type设置为application/json
+2. 响应状态码说明：
+   - 200: 请求成功
+   - 400: 请求参数错误
+   - 404: 资源不存在
+   - 500: 服务器内部错误
+3. 密码在响应中会被隐藏
+4. 创建用户时会自动设置ROLE_USER角色
+5. 只有ROLE_ADMIN角色可以删除用户 

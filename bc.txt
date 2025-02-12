@@ -1,0 +1,390 @@
+20:50:57: 正在执行 'bootRun'…
+
+> Task :compileJava UP-TO-DATE
+> Task :processResources
+> Task :classes
+> Task :resolveMainClassName
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.3)
+
+2025-02-10T20:50:58.275+08:00  INFO 30784 --- [capespringboot] [           main] o.x.y.c.CapespringbootApplication        : Starting CapespringbootApplication using Java 17.0.12 with PID 30784 (C:\Users\xiyu\Desktop\新建文件夹\capespringboot\build\classes\java\main started by xiyu in C:\Users\xiyu\Desktop\新建文件夹\capespringboot)
+2025-02-10T20:50:58.277+08:00 DEBUG 30784 --- [capespringboot] [           main] o.x.y.c.CapespringbootApplication        : Running with Spring Boot v3.2.3, Spring v6.1.4
+2025-02-10T20:50:58.277+08:00  INFO 30784 --- [capespringboot] [           main] o.x.y.c.CapespringbootApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-02-10T20:50:58.752+08:00  INFO 30784 --- [capespringboot] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-10T20:50:58.828+08:00  INFO 30784 --- [capespringboot] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2025-02-10T20:50:59.532+08:00  INFO 30784 --- [capespringboot] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-10T20:50:59.541+08:00  INFO 30784 --- [capespringboot] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-10T20:50:59.541+08:00  INFO 30784 --- [capespringboot] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-02-10T20:50:59.600+08:00  INFO 30784 --- [capespringboot] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-10T20:50:59.600+08:00  INFO 30784 --- [capespringboot] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1152 ms
+2025-02-10T20:50:59.629+08:00  INFO 30784 --- [capespringboot] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-10T20:50:59.810+08:00  INFO 30784 --- [capespringboot] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75793f17
+2025-02-10T20:50:59.812+08:00  INFO 30784 --- [capespringboot] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-10T20:50:59.818+08:00  INFO 30784 --- [capespringboot] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3308/cape?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8'
+2025-02-10T20:50:59.910+08:00  INFO 30784 --- [capespringboot] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-10T20:50:59.950+08:00  INFO 30784 --- [capespringboot] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-02-10T20:50:59.979+08:00  INFO 30784 --- [capespringboot] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-10T20:51:00.157+08:00  INFO 30784 --- [capespringboot] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-10T20:51:00.189+08:00  WARN 30784 --- [capespringboot] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-10T20:51:00.190+08:00  WARN 30784 --- [capespringboot] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-10T20:51:00.939+08:00  INFO 30784 --- [capespringboot] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-10T20:51:00.995+08:00  INFO 30784 --- [capespringboot] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-10T20:51:01.340+08:00  WARN 30784 --- [capespringboot] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-10T20:51:01.424+08:00  INFO 30784 --- [capespringboot] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-02-10T20:51:01.616+08:00  INFO 30784 --- [capespringboot] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@501956f9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@299c86f0, org.springframework.security.web.context.SecurityContextHolderFilter@31d8352e, org.springframework.security.web.header.HeaderWriterFilter@2f006edf, org.springframework.web.filter.CorsFilter@4fbed6fc, org.springframework.security.web.authentication.logout.LogoutFilter@6347f9cc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@9cdf13e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1cb7f2fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cb64b9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b1d93e9, org.springframework.security.web.access.ExceptionTranslationFilter@3d96b8fb, org.springframework.security.web.access.intercept.AuthorizationFilter@3749c6ac]
+2025-02-10T20:51:01.896+08:00  INFO 30784 --- [capespringboot] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-02-10T20:51:01.904+08:00  INFO 30784 --- [capespringboot] [           main] o.x.y.c.CapespringbootApplication        : Started CapespringbootApplication in 3.944 seconds (process running for 4.279)
+Encoded password for 'password': $2a$10$ilCcGJekz.1eDpmIT2mobOp1Xr9.AazxJn3U8TD/t7cL7ozZgAfwy
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.delete_at<=?
+2025-02-10T20:51:02.165+08:00  INFO 30784 --- [capespringboot] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-10T20:51:02.165+08:00  INFO 30784 --- [capespringboot] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-10T20:51:02.165+08:00  INFO 30784 --- [capespringboot] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-02-10T20:51:02.178+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /users?username=xiyuaaa&password=mk113711&url=https%3A%2F%2Fgithub.com
+2025-02-10T20:51:02.189+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-10T20:51:02.312+08:00  WARN 30784 --- [capespringboot] [nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [113] milliseconds.
+2025-02-10T20:51:02.313+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-1] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/users?username=xiyuaaa&password=mk113711&url=https%3A%2F%2Fgithub.com&continue to session
+2025-02-10T20:51:02.314+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-1] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8080/login
+2025-02-10T20:51:02.329+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /login
+2025-02-10T20:51:02.329+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /login
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+2025-02-10T20:51:02.346+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-10T20:51:03.851+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2025-02-10T20:51:03.853+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2025-02-10T20:51:03.870+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-10T20:51:04.042+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2025-02-10T20:51:04.043+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2025-02-10T20:51:04.045+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-02-10T20:51:11.972+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-02-10T20:51:12.128+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2025-02-10T20:51:12.128+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from A801B1877D46E9FD3A62FBBFF92861B7
+2025-02-10T20:51:12.129+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@74b7ca58]
+2025-02-10T20:51:12.129+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] w.a.UsernamePasswordAuthenticationFilter : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]
+2025-02-10T20:51:12.129+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] o.s.s.web.DefaultRedirectStrategy        : Redirecting to /
+2025-02-10T20:51:12.172+08:00 DEBUG 30784 --- [capespringboot] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /
+2025-02-10T20:51:12.172+08:00 DEBUG 30784 --- [capespringboot] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+2025-02-10T20:51:12.201+08:00 DEBUG 30784 --- [capespringboot] [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:16.210+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /users
+2025-02-10T20:51:16.212+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:16.213+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /users
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0
+2025-02-10T20:51:24.604+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /users?username=xiyuaaa&password=mk113711&url=https%3A%2F%2Fgithub.com
+2025-02-10T20:51:24.604+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:24.604+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /users?username=xiyuaaa&password=mk113711&url=https%3A%2F%2Fgithub.com
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0
+2025-02-10T20:51:41.432+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing DELETE /api/users/xiyu
+2025-02-10T20:51:41.433+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured DELETE /api/users/xiyu
+Delete request received for user: xiyu
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Attempting to delete user: xiyu
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+User deleted successfully: xiyu
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2025-02-10T20:51:41.548+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:42.795+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /users?username=xiyuaaa&password=mk113711&url=https%3A%2F%2Fgithub.com
+2025-02-10T20:51:42.796+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:42.796+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /users?username=xiyuaaa&password=mk113711&url=https%3A%2F%2Fgithub.com
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0
+2025-02-10T20:51:43.712+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2025-02-10T20:51:43.712+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2025-02-10T20:51:43.715+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:43.901+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2025-02-10T20:51:43.901+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2025-02-10T20:51:43.905+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:48.080+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /admin/announcements
+2025-02-10T20:51:48.081+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:48.081+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /admin/announcements
+2025-02-10T20:51:48.082+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String org.xiyu.yee.capespringboot.controller.AnnouncementController.showAnnouncementManager(org.springframework.ui.Model); target is of class [org.xiyu.yee.capespringboot.controller.AnnouncementController]
+2025-02-10T20:51:48.086+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-6] horizationManagerBeforeMethodInterceptor : Authorized method invocation ReflectiveMethodInvocation: public java.lang.String org.xiyu.yee.capespringboot.controller.AnnouncementController.showAnnouncementManager(org.springframework.ui.Model); target is of class [org.xiyu.yee.capespringboot.controller.AnnouncementController]
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.enabled,
+        a1_0.updated_at 
+    from
+        announcements a1_0
+2025-02-10T20:51:53.047+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /admin/announcements?
+2025-02-10T20:51:53.048+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:53.048+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /admin/announcements?
+2025-02-10T20:51:53.048+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String org.xiyu.yee.capespringboot.controller.AnnouncementController.showAnnouncementManager(org.springframework.ui.Model); target is of class [org.xiyu.yee.capespringboot.controller.AnnouncementController]
+2025-02-10T20:51:53.048+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-7] horizationManagerBeforeMethodInterceptor : Authorized method invocation ReflectiveMethodInvocation: public java.lang.String org.xiyu.yee.capespringboot.controller.AnnouncementController.showAnnouncementManager(org.springframework.ui.Model); target is of class [org.xiyu.yee.capespringboot.controller.AnnouncementController]
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.enabled,
+        a1_0.updated_at 
+    from
+        announcements a1_0
+2025-02-10T20:51:55.220+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /users
+2025-02-10T20:51:55.220+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:51:55.220+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /users
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0
+2025-02-10T20:51:56.569+08:00 DEBUG 30784 --- [capespringboot] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /
+2025-02-10T20:51:56.569+08:00 DEBUG 30784 --- [capespringboot] [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+2025-02-10T20:51:56.599+08:00 DEBUG 30784 --- [capespringboot] [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.delete_at<=?
+2025-02-10T20:52:03.304+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /admin/announcements
+2025-02-10T20:52:03.304+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:52:03.304+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /admin/announcements
+2025-02-10T20:52:03.305+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] horizationManagerBeforeMethodInterceptor : Authorizing method invocation ReflectiveMethodInvocation: public java.lang.String org.xiyu.yee.capespringboot.controller.AnnouncementController.showAnnouncementManager(org.springframework.ui.Model); target is of class [org.xiyu.yee.capespringboot.controller.AnnouncementController]
+2025-02-10T20:52:03.305+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-9] horizationManagerBeforeMethodInterceptor : Authorized method invocation ReflectiveMethodInvocation: public java.lang.String org.xiyu.yee.capespringboot.controller.AnnouncementController.showAnnouncementManager(org.springframework.ui.Model); target is of class [org.xiyu.yee.capespringboot.controller.AnnouncementController]
+Hibernate: 
+    select
+        a1_0.id,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.enabled,
+        a1_0.updated_at 
+    from
+        announcements a1_0
+2025-02-10T20:52:04.890+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /users
+2025-02-10T20:52:04.890+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=adminOPxiyu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=A801B1877D46E9FD3A62FBBFF92861B7], Granted Authorities=[ROLE_ADMIN]]]
+2025-02-10T20:52:04.890+08:00 DEBUG 30784 --- [capespringboot] [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /users
+Hibernate: 
+    select
+        count(rr1_0.id) 
+    from
+        registration_requests rr1_0 
+    where
+        rr1_0.status=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.delete_at,
+        u1_0.enabled,
+        u1_0.password,
+        u1_0.role,
+        u1_0.url,
+        u1_0.username 
+    from
+        users u1_0
