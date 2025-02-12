@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>公告管理 - Cape System</title>
+    <style>
+        .announcement-manager {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .announcement-form {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .announcement-list {
+            margin-top: 2rem;
+        }
+        
+        .announcement-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .announcement-content {
+            margin-bottom: 0.5rem;
+        }
+        
+        .announcement-meta {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .announcement-actions {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="announcement-manager">
+            <h2>公告管理</h2>
+            
+            <div class="announcement-form">
+                <form id="announcementForm">
+                    <div class="form-group">
+                        <label>公告内容</label>
+                        <textarea class="form-control" id="content" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">添加公告</button>
+                </form>
+            </div>
+            
+            <div class="announcement-list">
+                <div th:each="announcement : ${announcements}" class="announcement-item">
+                    <div class="announcement-content" th:text="${announcement.content}"></div>
+                    <div class="announcement-meta">
+                        创建时间：<span th:text="${#temporals.format(announcement.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                        <br>
+                        状态：<span th:text="${announcement.enabled ? '启用' : '禁用'}"></span>
+                    </div>
+                    <div class="announcement-actions">
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-primary edit-btn"
+                                    th:data-id="${announcement.id}"
+                                    th:data-content="${announcement.content}"
+                                    th:data-enabled="${announcement.enabled}">
+                                编辑
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-btn"
+                                    th:data-id="${announcement.id}">
+                                删除
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑公告模态框 -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">编辑公告</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <input type="hidden" id="editId">
+                        <div class="form-group">
+                            <label>公告内容</label>
+                            <textarea class="form-control" id="editContent" rows="3" required></textarea>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" id="editEnabled">
+                            <label class="form-check-label">启用</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="saveEdit">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 添加公告
+        document.getElementById('announcementForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const content = document.getElementById('content').value;
+            
+            fetchWithCSRF('/admin/announcements', {
+                method: 'POST',
+                body: JSON.stringify({ content: content })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.message);
+                }
+            });
+        });
+
+        // 编辑公告
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const id = this.dataset.id;
+                const content = this.dataset.content;
+                const enabled = this.dataset.enabled === 'true';
+                
+                document.getElementById('editId').value = id;
+                document.getElementById('editContent').value = content;
+                document.getElementById('editEnabled').checked = enabled;
+                
+                new bootstrap.Modal(document.getElementById('editModal')).show();
+            });
+        });
+
+        // 保存编辑
+        document.getElementById('saveEdit').addEventListener('click', function() {
+            const id = document.getElementById('editId').value;
+            const content = document.getElementById('editContent').value;
+            const enabled = document.getElementById('editEnabled').checked;
+            
+            fetchWithCSRF(`/admin/announcements/${id}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                    content: content,
+                    enabled: enabled
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert(data.message);
+                }
+            });
+        });
+
+        // 删除公告
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (confirm('确定要删除这条公告吗？')) {
+                    const id = this.dataset.id;
+                    
+                    fetchWithCSRF(`/admin/announcements/${id}`, {
+                        method: 'DELETE'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            location.reload();
+                        } else {
+                            alert(data.message);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

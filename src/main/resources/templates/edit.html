@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>编辑用户 - Cape System</title>
+    <style>
+        .edit-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .edit-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .edit-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3c72;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #1e3c72;
+            box-shadow: 0 0 0 0.2rem rgba(30,60,114,0.15);
+            outline: none;
+        }
+        
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .btn-save {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+        
+        .btn-back {
+            background: linear-gradient(135deg, #757F9A 0%, #D7DDE8 100%);
+            color: #1e3c72;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        .user-info {
+            background: rgba(30,60,114,0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .user-info p {
+            margin: 0;
+            color: #1e3c72;
+            font-weight: 500;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="edit-container fade-in">
+            <h2 class="edit-title">编辑用户信息</h2>
+            
+            <div class="user-info">
+                <p th:text="${'用户名: ' + user.username}"></p>
+            </div>
+            
+            <form th:action="@{/update}" method="post" th:object="${user}">
+                <input type="hidden" th:field="*{username}"/>
+                
+                <div class="form-group">
+                    <label for="url">披风URL：</label>
+                    <input type="text" class="form-control" id="url" th:field="*{url}"
+                           placeholder="请输入披风图片URL"/>
+                </div>
+                
+                <div class="btn-container">
+                    <a th:href="@{/users}" class="btn btn-back">返回列表</a>
+                    <button type="submit" class="btn btn-save">保存更改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const btn = document.querySelector('.btn-save');
+            btn.disabled = true;
+            btn.textContent = '保存中...';
+        });
+    </script>
+</body>
+</html> 

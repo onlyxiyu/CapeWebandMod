@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title != null ? title + ' - Cape System' : 'Cape System'}">Cape System</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="_csrf" th:if="${_csrf != null}" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:if="${_csrf != null}" th:content="${_csrf.headerName}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css(v=${#dates.createNow().getTime()})}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css(v=${#dates.createNow().getTime()})}">
+    <style th:inline="css">
+        /* 基础样式 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* 更柔和的渐变背景 */
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 导航栏样式优化 */
+        .navbar {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* 公告栏优化 */
+        .announcement-container {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .announcement-scroll {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .announcement-separator {
+            margin: 0 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        marquee {
+            width: 100%;
+        }
+
+        .announcement-scroll span {
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        /* 内容区域优化 */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+        }
+
+        /* 按钮样式 */
+        .btn {
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 表格样式 */
+        .table {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .table th {
+            background: rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .table td {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 下拉菜单 */
+        .dropdown-menu {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-item {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 文字样式 */
+        h1, h2, h3, h4, h5, h6 {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <!-- 公告栏 -->
+        <div class="announcement-container" th:if="${not #lists.isEmpty(announcements)}">
+            <div class="announcement-scroll">
+                <marquee scrollamount="5" direction="left">
+                    <th:block th:each="announcement, iterStat : ${announcements}">
+                        <span th:text="${announcement}"></span>
+                        <span th:if="${!iterStat.last}" class="announcement-separator">|</span>
+                    </th:block>
+                </marquee>
+            </div>
+        </div>
+
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Cape System</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                        <!-- 只有管理员可以看到用户管理 -->
+                        <li class="nav-item" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                            <a class="nav-link" href="/users">用户管理</a>
+                        </li>
+                        <!-- 管理员菜单 -->
+                        <li class="nav-item dropdown" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                管理员面板
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                <li><a class="dropdown-item" href="/register/pending">审核注册</a></li>
+                                <li><a class="dropdown-item" href="/admin/announcements">公告管理</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- 右侧用户信息 -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown" th:if="${#authentication.authenticated}">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                <span th:text="${#authentication.name}">用户名</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" th:href="@{/edit/{username}(username=${#authentication.name})}">
+                                    <i class="fas fa-edit"></i> 个人资料
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/logout">
+                                    <i class="fas fa-sign-out-alt"></i> 退出登录
+                                </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" th:unless="${#authentication.authenticated}">
+                            <a class="nav-link" href="/register">注册</a>
+                        </li>
+                        <li class="nav-item" th:unless="${#authentication.authenticated}">
+                            <a class="nav-link" href="/login">登录</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主标题 -->
+        <h1 class="main-title">自定义披风</h1>
+
+        <!-- 主要内容区域 -->
+        <div class="container glass-container">
+            <div layout:fragment="content">
+                <!-- 页面具体内容会被插入这里 -->
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="container text-center">
+                <span class="text-muted">© 2024 Cape System. All rights reserved.</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 修改通用的fetch函数，增加CSRF token检查
+        function fetchWithCSRF(url, options = {}) {
+            const tokenMeta = document.querySelector('meta[name="_csrf"]');
+            const headerMeta = document.querySelector('meta[name="_csrf_header"]');
+            
+            let headers = {
+                'Content-Type': 'application/json',
+                ...options.headers
+            };
+            
+            // 只有当CSRF token存在时才添加
+            if (tokenMeta && headerMeta) {
+                headers[headerMeta.content] = tokenMeta.content;
+            }
+            
+            return fetch(url, {
+                ...options,
+                headers: headers
+            });
+        }
+
+        // 通用的加载状态处理
+        function setLoading(button, isLoading, text = '处理中...') {
+            button.disabled = isLoading;
+            if (isLoading) {
+                button.setAttribute('data-original-text', button.innerHTML);
+                button.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${text}`;
+            } else {
+                button.innerHTML = button.getAttribute('data-original-text');
+            }
+        }
+
+        // 通用的消息显示
+        function showMessage(element, type, message) {
+            element.className = `alert alert-${type}`;
+            element.textContent = message;
+            element.style.display = 'block';
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html> 

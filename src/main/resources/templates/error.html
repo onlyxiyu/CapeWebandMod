@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>错误 - Cape System</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="error-container">
+            <h2>出错了！</h2>
+            <p th:text="${message}">发生了一个错误</p>
+            <a href="/" class="btn btn-primary">返回首页</a>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>用户管理 - Cape System</title>
+    <style>
+        .users-container {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            backdrop-filter: blur(10px);
+        }
+
+        .users-table {
+            width: 100%;
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table {
+            margin-bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .table th {
+            background: rgba(35, 166, 213, 0.3);
+            color: white;
+            font-weight: 500;
+            border: none;
+            padding: 1rem;
+        }
+
+        .table td {
+            color: #e0e0e0;
+            border-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            vertical-align: middle;
+        }
+
+        .btn-group {
+            gap: 0.5rem;
+        }
+
+        .btn-action {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-edit {
+            background: linear-gradient(45deg, #23a6d5, #23d5ab);
+            color: white;
+        }
+
+        .btn-delete {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+        }
+
+        .btn-schedule {
+            background: linear-gradient(45deg, #f7b733, #fc4a1a);
+            color: white;
+        }
+
+        .user-role {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .role-admin {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+        }
+
+        .role-user {
+            background: linear-gradient(45deg, #23a6d5, #23d5ab);
+            color: white;
+        }
+
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .status-active {
+            background: linear-gradient(45deg, #84fab0, #8fd3f4);
+            color: #0c5460;
+        }
+
+        .status-disabled {
+            background: linear-gradient(45deg, #f6d365, #fda085);
+            color: #856404;
+        }
+
+        .url-text {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .password-cell {
+            font-family: monospace;
+            color: #888;
+        }
+
+        .admin-panel {
+            margin-top: 2rem;
+            padding: 2rem;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .add-user-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .input-group .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .input-group .btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    </style>
+    
+    <script>
+        // 定义所有全局函数
+        function scheduleDelete(username) {
+            console.log('scheduleDelete called for username:', username);
+            const minutes = prompt('请输入多少分钟后删除用户:', '60');
+            if (minutes === null || minutes.trim() === '') {
+                console.log('User cancelled or empty input');
+                return;
+            }
+            
+            const minutesNum = parseInt(minutes);
+            console.log('Sending schedule delete request:', {username, minutes: minutesNum});
+
+            fetch(`/api/users/${username}/schedule-delete`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ minutes: minutesNum })
+            })
+            .then(response => {
+                console.log('Schedule delete response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Schedule delete success:', data);
+                if (data.success) {
+                    alert(data.message || '已设置定时删除');
+                    location.reload();
+                } else {
+                    alert(data.message || '设置失败');
+                }
+            })
+            .catch(error => {
+                console.error('Schedule delete error:', error);
+                alert('设置失败，请稍后重试');
+            });
+        }
+
+        function deleteUser(username) {
+            console.log('deleteUser called for username:', username);
+            if (!confirm(`确定要删除用户 ${username} 吗？`)) {
+                console.log('User cancelled deletion');
+                return;
+            }
+            
+            console.log('Sending delete request for:', username);
+            fetch(`/api/users/${username}`, {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log('Delete response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Delete success:', data);
+                if (data.success) {
+                    alert(data.message || '用户已删除');
+                    location.reload();
+                } else {
+                    alert(data.message || '删除失败');
+                }
+            })
+            .catch(error => {
+                console.error('Delete error:', error);
+                alert('删除失败，请稍后重试');
+            });
+        }
+
+        function editUser(username) {
+            window.location.href = `/edit/${username}`;
+        }
+
+        function resetPassword(username) {
+            const newPasswordInput = document.getElementById(`newPassword-${username}`);
+            const newPassword = newPasswordInput.value;
+            
+            if (!newPassword) {
+                alert('请输入新密码');
+                return;
+            }
+
+            fetch(`/api/users/${username}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ password: newPassword })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('密码已重置');
+                    newPasswordInput.value = '';
+                } else {
+                    alert('重置失败: ' + (data.message || '未知错误'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('重置失败，请稍后重试');
+            });
+        }
+
+        function handleAddUser() {
+            console.log('handleAddUser triggered');
+            
+            const username = document.getElementById('addUsername').value.trim();
+            const password = document.getElementById('addPassword').value.trim();
+            const url = document.getElementById('addUrl').value.trim();
+            
+            // 添加表单验证
+            if (!username || !password) {
+                alert('用户名和密码不能为空');
+                return;
+            }
+            
+            // 检查用户名格式
+            if (!username.match(/^[a-zA-Z0-9_\u4e00-\u9fa5]{2,20}$/)) {
+                alert('用户名必须是2-20位的中文、字母、数字或下划线');
+                return;
+            }
+            
+            // 检查密码格式
+            if (!password.match(/^[a-zA-Z0-9_]{6,20}$/)) {
+                alert('密码必须是6-20位的字母、数字或下划线');
+                return;
+            }
+            
+            const formData = {
+                username: username,
+                password: password,
+                url: url || ''
+            };
+            
+            console.log('Sending create user request:', formData);
+            fetch('/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                console.log('Create user response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Create user success:', data);
+                if (data.success) {
+                    alert(data.message || '用户添加成功');
+                    document.getElementById('addUserForm').reset();
+                    location.reload();
+                } else {
+                    alert(data.message || '添加用户失败');
+                }
+            })
+            .catch(error => {
+                console.error('Create user error:', error);
+                alert('添加用户失败，请稍后重试');
+            });
+        }
+    </script>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="users-container">
+            <h2 class="text-white mb-4">用户管理</h2>
+            
+            <div class="users-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>密码</th>
+                            <th>披风URL</th>
+                            <th>角色</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="user : ${users}">
+                            <td th:text="${user.username}"></td>
+                            <td class="password-cell">
+                                <div class="input-group">
+                                    <input type="password" class="form-control form-control-sm" 
+                                           th:id="'newPassword-' + ${user.username}" 
+                                           placeholder="新密码">
+                                    <button class="btn btn-sm btn-info" 
+                                            th:data-username="${user.username}"
+                                            onclick="resetPassword(this.getAttribute('data-username'))">
+                                        <i class="fas fa-key"></i> 重置密码
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="url-text" th:text="${user.url ?: '未设置'}"></div>
+                            </td>
+                            <td>
+                                <span class="user-role" 
+                                      th:classappend="${user.role == 'ROLE_ADMIN' ? 'role-admin' : 'role-user'}"
+                                      th:text="${user.role == 'ROLE_ADMIN' ? '管理员' : '用户'}">
+                                </span>
+                            </td>
+                            <td>
+                                <span th:if="${user.enabled}" class="status-badge enabled">正常</span>
+                                <span th:if="${!user.enabled}" class="status-badge disabled">已禁用</span>
+                                <span th:if="${user.deleteAt != null}" class="status-badge scheduled" 
+                                      th:title="'计划于 ' + ${#temporals.format(user.deleteAt, 'yyyy-MM-dd HH:mm:ss')} + ' 删除'">
+                                    计划删除
+                                </span>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-action btn-edit"
+                                       th:href="@{/edit/{username}(username=${user.username})}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <button class="btn btn-action btn-schedule"
+                                            th:data-username="${user.username}"
+                                            onclick="scheduleDelete(this.getAttribute('data-username'))"
+                                            title="定时删除">
+                                        <i class="fas fa-clock"></i>
+                                    </button>
+                                    <button class="btn btn-action btn-delete"
+                                            th:data-username="${user.username}"
+                                            onclick="deleteUser(this.getAttribute('data-username'))"
+                                            title="立即删除">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="admin-panel" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                <h3 class="text-white mb-4">添加新用户</h3>
+                <div class="add-user-form">
+                    <form id="addUserForm" class="bg-dark bg-opacity-50 p-4 rounded">
+                        <div class="mb-3">
+                            <label class="form-label text-white">用户名</label>
+                            <input type="text" class="form-control" id="addUsername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-white">密码</label>
+                            <input type="password" class="form-control" id="addPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-white">披风URL (可选)</label>
+                            <input type="text" class="form-control" id="addUrl">
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="handleAddUser()">
+                            <i class="fas fa-user-plus"></i> 添加用户
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

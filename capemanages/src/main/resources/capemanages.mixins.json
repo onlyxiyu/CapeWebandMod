@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.xiyu.yee.capemanages.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "capemanages.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "PlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

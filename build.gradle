@@ -1,0 +1,85 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'org.xiyu.yee'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot 核心依赖
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    implementation 'jakarta.validation:jakarta.validation-api'
+    
+    // 数据库依赖
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'com.h2database:h2'
+    
+    // 工具类库
+    implementation 'com.google.guava:guava:31.1-jre'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    
+    // 测试依赖
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// 添加编译选项
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+// 添加打包配置
+bootJar {
+    archiveFileName = 'capespringboot.jar'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
+
+// 在build.gradle中添加以下配置
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
+// 如果使用processResources任务，也设置其编码
+processResources {
+    filteringCharset = 'UTF-8'
+}

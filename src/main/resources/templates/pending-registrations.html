@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>待审核注册 - Cape System</title>
+    <style>
+        .pending-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .header-info {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-info h2 {
+            color: #1e3c72;
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .requests-table {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+        
+        .requests-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .requests-table th {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .requests-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .requests-table tr:hover {
+            background: rgba(0,0,0,0.02);
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 0.2rem;
+        }
+        
+        .btn-approve {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            color: #0c5460;
+        }
+        
+        .btn-reject {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #721c24;
+        }
+        
+        .btn-back {
+            background: linear-gradient(135deg, #757F9A 0%, #D7DDE8 100%);
+            color: #1e3c72;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1.5rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .timestamp {
+            font-size: 0.9rem;
+            color: #666;
+            background: rgba(0,0,0,0.05);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .no-requests {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            transform: translateX(120%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast-info {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .toast-error {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+        
+        .toast-success {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        }
+        
+        .requests-table tr {
+            transition: all 0.3s ease;
+        }
+        
+        .requests-table tr:hover {
+            transform: translateX(5px);
+            background: rgba(30,60,114,0.05);
+        }
+        
+        .btn-approve, .btn-reject {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-approve::after, .btn-reject::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-approve:hover::after, .btn-reject:hover::after {
+            left: 100%;
+        }
+        
+        .fade-in {
+            animation: fadeInSlide 0.5s ease-out;
+        }
+        
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="pending-container fade-in">
+            <div class="header-info">
+                <h2>待审核注册列表</h2>
+            </div>
+            
+            <div class="requests-table">
+                <table th:if="${not #lists.isEmpty(requests)}">
+                    <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>URL</th>
+                            <th>申请时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="request : ${requests}">
+                            <td th:text="${request.username}"></td>
+                            <td th:text="${request.url}"></td>
+                            <td>
+                                <span class="timestamp" 
+                                      th:text="${#temporals.format(request.createdAt, 'yyyy-MM-dd HH:mm:ss')}">
+                                </span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <form th:action="@{/register/approve/{id}(id=${request.id})}" 
+                                          method="post" style="display: inline;">
+                                        <button type="submit" class="btn btn-approve">通过</button>
+                                    </form>
+                                    <form th:action="@{/register/reject/{id}(id=${request.id})}" 
+                                          method="post" style="display: inline;">
+                                        <button type="submit" class="btn btn-reject">拒绝</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div th:if="${#lists.isEmpty(requests)}" class="no-requests">
+                    暂无待审核的注册申请
+                </div>
+            </div>
+            
+            <a th:href="@{/users}" class="btn btn-back">返回用户列表</a>
+        </div>
+    </div>
+    
+    <script>
+        // 修改表单部分，移除CSRF token
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button[type="submit"]');
+                const isApprove = btn.classList.contains('btn-approve');
+                
+                setLoading(btn, true, isApprove ? '处理中...' : '拒绝中...');
+                
+                const row = btn.closest('tr');
+                row.style.transition = 'all 0.3s ease';
+                row.style.backgroundColor = isApprove ? 'rgba(130, 255, 130, 0.2)' : 'rgba(255, 130, 130, 0.2)';
+                
+                fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        // 添加淡出动画
+                        row.style.opacity = '0';
+                        row.style.transform = 'translateX(100px)';
+                        setTimeout(() => {
+                            row.remove();
+                            // 检查是否还有其他申请
+                            if (document.querySelectorAll('tbody tr').length === 0) {
+                                location.reload(); // 如果没有了，刷新页面显示"暂无待审核"
+                            }
+                        }, 300);
+                        
+                        // 显示成功提示
+                        showToast(data.message || '操作成功', 'success');
+                    } else {
+                        showToast(data.message || '处理失败', 'error');
+                        setLoading(btn, false);
+                        row.style.backgroundColor = '';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showToast('处理失败，请稍后重试', 'error');
+                    setLoading(btn, false);
+                    row.style.backgroundColor = '';
+                });
+            });
+        });
+
+        // 添加Toast提示
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }, 100);
+        }
+
+        // 设置按钮加载状态
+        function setLoading(button, isLoading, text = '处理中...') {
+            button.disabled = isLoading;
+            if (isLoading) {
+                button.setAttribute('data-original-text', button.innerHTML);
+                button.innerHTML = text;
+            } else {
+                button.innerHTML = button.getAttribute('data-original-text');
+            }
+        }
+    </script>
+</body>
+</html> 

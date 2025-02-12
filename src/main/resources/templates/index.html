@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>首页 - Cape System</title>
+    <style>
+        .home-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro-section {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .intro-section h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .intro-section p {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .feature-card h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .feature-card p {
+            color: #e0e0e0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #23a6d5;
+            text-shadow: 0 0 10px rgba(35, 166, 213, 0.5);
+        }
+
+        .contact-section {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .qq-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #23a6d5, #23d5ab);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .qq-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .announcements {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .announcement-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .announcement-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="home-container">
+            <div class="intro-section">
+                <h2>欢迎使用 Cape System</h2>
+                <p>这是一个专为Minecraft玩家设计的披风管理系统，让您轻松管理和自定义您的游戏披风。</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-puzzle-piece feature-icon"></i>
+                <h3>模组集成</h3>
+                <p>完美集成我们的Minecraft模组，只需安装模组并登录账号，即可在游戏中显示您的自定义披风。</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-upload feature-icon"></i>
+                <h3>简单使用</h3>
+                <p>1. 注册账号并等待管理员审核</p>
+                <p>2. 登录后上传您的披风URL</p>
+                <p>3. 在游戏中安装我们的模组</p>
+                <p>4. 使用相同的账号登录模组</p>
+                <p>5. 享受您的自定义披风！</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>安全可靠</h3>
+                <p>我们使用安全的加密方式保护您的账号信息，支持自定义披风URL，确保您的游戏体验安全无忧。</p>
+            </div>
+
+            <div class="contact-section">
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=AEnqQs8gBlAja3bGkPH9hpkYjbO3QEhD&authKey=hWGtaaIn%2F3Q1qTgWm5aJNsRY%2F4nRkDr7XU5lBke%2FZJO5axTAJNxGiXktcMGg3e%2FU&noverify=0&group_code=426345022" 
+                   target="_blank" 
+                   class="qq-link">
+                    <i class="fab fa-qq"></i>
+                    加入官方QQ群获取帮助
+                </a>
+            </div>
+
+            <div class="announcements" th:if="${announcements != null and !announcements.isEmpty()}">
+                <div class="announcement-item" th:each="announcement : ${announcements}">
+                    <p th:text="${announcement}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
