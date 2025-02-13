@@ -1,0 +1,240 @@
+[142月2025 01:28:47.313] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.18, --assetsDir, E:\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 39.1.0, --fml.mcVersion, 1.18.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20211210.034407, --mixin.config, capemanages.mixins.json]
+[142月2025 01:28:47.318] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.1.0+9.1.0+main.6690ee51 starting: java version 17.0.13 by Amazon.com Inc.
+[142月2025 01:28:47.416] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/E:/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%2327!/ Service=ModLauncher Env=CLIENT
+[142月2025 01:28:49.010] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, E:\.gradle\caches\forge_gradle\assets, --assetIndex, 1.18]
+[142月2025 01:28:49.204] [main/WARN] [mixin/]: Reference map 'capemanages.refmap.json' for capemanages.mixins.json could not be read. If this is a development environment you can ignore this message
+[01:28:55] [Render thread/WARN]: Assets URL 'union:/E:/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18.1-39.1.0_mapped_official_1.18.1/forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/assets/.mcassetsroot' uses unexpected schema
+[01:28:55] [Render thread/WARN]: Assets URL 'union:/E:/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18.1-39.1.0_mapped_official_1.18.1/forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/data/.mcassetsroot' uses unexpected schema
+[142月2025 01:28:55.382] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[01:28:55] [Render thread/INFO]: Setting user: Dev
+[01:28:55] [Render thread/INFO]: Backend library: LWJGL version 3.2.2 SNAPSHOT
+[01:28:58] [modloading-worker-0/INFO]: Forge mod loading, version 39.1.0, for MC 1.18.1 with MCP 20211210.034407
+[01:28:58] [modloading-worker-0/INFO]: MinecraftForge v39.1.0 Initialized
+[142月2025 01:29:01.103] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
+[01:29:01] [Render thread/INFO]: Enabled Gametest Namespaces: [capemanages]
+[01:29:01] [Render thread/INFO]: Reloading ResourceManager: Default, Mod Resources
+[142月2025 01:29:02.103] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[142月2025 01:29:03.645] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: UP_TO_DATE Current: 39.1.0 Target: null
+[01:29:10] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[01:29:10] [Render thread/INFO]: Sound engine started
+[01:29:11] [Render thread/INFO]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[01:29:11] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[01:29:12] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[01:29:29] [Render thread/INFO]: Reloading ResourceManager: Default, Mod Resources
+[01:29:34] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[01:29:34] [Render thread/INFO]: Sound engine started
+[01:29:34] [Render thread/INFO]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[01:29:34] [Render thread/INFO]: Created: 256x128x4 minecraft:textures/atlas/signs.png-atlas
+[01:29:34] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[01:29:34] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[01:29:34] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[01:29:34] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[01:29:34] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[01:29:35] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[01:29:35] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[01:29:35] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[01:29:42] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
+[01:29:43] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:29:43] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:29:43] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[01:29:43] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[01:29:43] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:29:43] [Render thread/INFO]: Reloading ResourceManager: Default, , main
+[01:29:44] [Render thread/INFO]: Loaded 7 recipes
+[01:29:45] [Render thread/INFO]: Loaded 1141 advancements
+[142月2025 01:29:46.199] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[01:29:46] [Server thread/INFO]: Starting integrated minecraft server version 1.18.1
+[01:29:46] [Server thread/INFO]: Generating keypair
+[01:29:46] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[01:29:47] [Render thread/INFO]: 准备生成区域中：0%
+[01:29:49] [Render thread/INFO]: 准备生成区域中：0%
+[01:29:49] [Render thread/INFO]: 准备生成区域中：0%
+[01:29:49] [Render thread/INFO]: 准备生成区域中：0%
+[01:29:49] [Render thread/INFO]: 准备生成区域中：0%
+[01:29:49] [Render thread/INFO]: 准备生成区域中：0%
+[01:29:49] [Render thread/INFO]: 准备生成区域中：6%
+[01:29:50] [Render thread/INFO]: 准备生成区域中：33%
+[01:29:50] [Render thread/INFO]: 准备生成区域中：67%
+[01:29:51] [Render thread/INFO]: 准备生成区域中：86%
+[01:29:51] [Server thread/INFO]: Successfully initialized permission handler forge:default_handler
+[01:29:51] [Render thread/INFO]: Time elapsed: 4676 ms
+[01:29:51] [Server thread/INFO]: Changing view distance to 12, from 10
+[01:29:51] [Server thread/INFO]: Changing simulation distance to 12, from 0
+[01:29:53] [Netty Local Client IO #0/INFO]: Connected to a modded server.
+[01:29:53] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@42df754f
+[01:29:53] [Server thread/INFO]: Dev[local:E:52c2d8c9] logged in with entity id 214 at (12.638284697413523, 63.0, -112.56210791564764)
+[01:29:53] [Server thread/INFO]: Dev加入了游戏
+[01:29:53] [Render thread/INFO]: Loaded 43 advancements
+[01:29:54] [Server thread/INFO]: Saving and pausing game...
+[01:29:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[01:29:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[01:29:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[01:29:54] [Server thread/INFO]: Dev lost connection: 连接中止
+[01:29:54] [Server thread/INFO]: Dev退出了游戏
+[01:29:54] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[01:29:54] [Server thread/INFO]: Stopping server
+[01:29:54] [Server thread/INFO]: Saving players
+[01:29:54] [Server thread/INFO]: Saving worlds
+[01:29:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[01:29:56] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[01:29:56] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[01:29:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (New World): All chunks are saved
+[01:29:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[01:29:56] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[01:29:56] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[01:30:15] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:30:15] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:30:15] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[01:30:15] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[01:30:15] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[01:30:15] [Render thread/INFO]: Reloading ResourceManager: Default, , main
+[01:30:16] [Render thread/INFO]: Loaded 7 recipes
+[01:30:17] [Render thread/INFO]: Loaded 1141 advancements
+[142月2025 01:30:18.196] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[01:30:18] [Server thread/INFO]: Starting integrated minecraft server version 1.18.1
+[01:30:18] [Server thread/INFO]: Generating keypair
+[01:30:18] [Server thread/WARN]: Configuration file .\saves\新的世界\serverconfig\forge-server.toml is not correct. Correcting
+[01:30:18] [Server thread/WARN]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
+[01:30:18] [Server thread/WARN]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[01:30:18] [Server thread/WARN]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[01:30:18] [Server thread/WARN]: Incorrect key server.zombieBaseSummonChance was corrected from null to its default, 0.1. 
+[01:30:18] [Server thread/WARN]: Incorrect key server.zombieBabyChance was corrected from null to its default, 0.05. 
+[01:30:18] [Server thread/WARN]: Incorrect key server.treatEmptyTagsAsAir was corrected from null to its default, false. 
+[01:30:18] [Server thread/WARN]: Incorrect key server.fixAdvancementLoading was corrected from null to its default, true. 
+[01:30:18] [Server thread/WARN]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
+[01:30:18] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[01:30:18] [Render thread/INFO]: 准备生成区域中：0%
+[01:30:18] [Render thread/INFO]: 准备生成区域中：0%
+[01:30:19] [Render thread/INFO]: 准备生成区域中：6%
+[01:30:19] [Render thread/INFO]: 准备生成区域中：24%
+[01:30:20] [Render thread/INFO]: 准备生成区域中：27%
+[01:30:21] [Render thread/INFO]: 准备生成区域中：31%
+[01:30:21] [Render thread/INFO]: 准备生成区域中：31%
+[01:30:21] [Render thread/INFO]: 准备生成区域中：86%
+[01:30:22] [Server thread/INFO]: Successfully initialized permission handler forge:default_handler
+[01:30:22] [Server thread/INFO]: Changing view distance to 12, from 10
+[01:30:22] [Server thread/INFO]: Changing simulation distance to 12, from 0
+[01:30:22] [Render thread/INFO]: Time elapsed: 3824 ms
+[01:30:22] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@374a9f0d
+[01:30:22] [Netty Local Client IO #1/INFO]: Connected to a modded server.
+[01:30:22] [Server thread/INFO]: Dev[local:E:edc0cea7] logged in with entity id 459 at (-3.5, -60.0, 8.5)
+[01:30:22] [Server thread/INFO]: Dev加入了游戏
+[01:30:22] [Render thread/INFO]: Loaded 0 advancements
+[01:31:35] [Server thread/INFO]: Saving and pausing game...
+[01:31:35] [Server thread/INFO]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[01:31:35] [Server thread/INFO]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[01:31:35] [Server thread/INFO]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[01:31:36] [Render thread/INFO]: Using default channel type
+[01:31:36] [Render thread/INFO]: Started serving on 29008
+[01:31:36] [Render thread/INFO]: [CHAT] 本地游戏已在端口29008上开启
+[01:31:46] [User Authenticator #1/INFO]: UUID of player God_xiyu is 89d586d8-4c10-4870-98b9-1ddc70894888
+[01:31:47] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@164b99eb
+[01:31:47] [Server thread/INFO]: God_xiyu[/26.157.73.245:29038] logged in with entity id 487 at (-3.5, -59.0, -2.5)
+[01:31:47] [Server thread/INFO]: God_xiyu加入了游戏
+[01:31:48] [Render thread/INFO]: [CHAT] God_xiyu加入了游戏
+[01:32:19] [Server thread/INFO]: God_xiyu被Dev杀死了
+[01:32:19] [Render thread/INFO]: [CHAT] God_xiyu被Dev杀死了
+[01:32:19] [Render thread/INFO]: Loaded 21 advancements
+[01:32:21] [Server thread/WARN]: God_xiyu moved too quickly! 0.800000011920929,2.0,-9.800000011920929
+[01:32:23] [Server thread/INFO]: [God_xiyu: 已将自己的游戏模式设置为创造模式]
+[01:32:23] [Render thread/INFO]: [CHAT] [God_xiyu: 已将自己的游戏模式设置为创造模式]
+[01:32:34] [Render thread/INFO]: [CHAT] §8[§bCape§8] §r§a正在设置自定义披风...
+[01:33:21] [User Authenticator #2/WARN]: Failed to verify username but will let them in anyway!
+[01:33:23] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@68c4f1fc
+[01:33:23] [Server thread/INFO]: mai_xiyu[/26.157.73.245:29170] logged in with entity id 491 at (-2.5, -60.0, 6.5)
+[01:33:23] [Server thread/INFO]: mai_xiyu加入了游戏
+[01:33:23] [Render thread/INFO]: [CHAT] mai_xiyu加入了游戏
+[01:33:26] [Server thread/INFO]: [mai_xiyu: 已将自己的游戏模式设置为创造模式]
+[01:33:26] [Render thread/INFO]: [CHAT] [mai_xiyu: 已将自己的游戏模式设置为创造模式]
+[01:33:42] [Render thread/WARN]: Failed to load texture: capemanages:textures/cape/235674ec
+java.io.FileNotFoundException: capemanages:textures/cape/235674ec
+	at net.minecraft.server.packs.resources.SimpleReloadableResourceManager.getResource(SimpleReloadableResourceManager.java:62) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.texture.SimpleTexture$TextureImage.load(SimpleTexture.java:81) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.texture.SimpleTexture.getTextureImage(SimpleTexture.java:57) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.texture.SimpleTexture.load(SimpleTexture.java:28) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:95) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.texture.TextureManager.register(TextureManager.java:66) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.texture.TextureManager.getTexture(TextureManager.java:118) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.RenderStateShard$TextureStateShard.lambda$new$0(RenderStateShard.java:238) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.RenderStateShard.setupRenderState(RenderStateShard.java:36) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:422) ~[guava-31.0.1-jre.jar%231!/:?]
+	at net.minecraft.client.renderer.RenderType$CompositeRenderType.lambda$new$1(RenderType.java:420) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.RenderStateShard.setupRenderState(RenderStateShard.java:36) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.RenderType.end(RenderType.java:367) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.MultiBufferSource$BufferSource.endBatch(MultiBufferSource.java:96) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.MultiBufferSource$BufferSource.getBuffer(MultiBufferSource.java:45) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.gui.Font$StringRenderOutput.accept(Font.java:283) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.util.StringDecomposer.feedChar(StringDecomposer.java:17) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.util.StringDecomposer.iterate(StringDecomposer.java:43) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.util.FormattedCharSequence.lambda$forward$2(FormattedCharSequence.java:23) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.gui.Font.renderText(Font.java:350) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.gui.Font.drawInternal(Font.java:199) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.gui.Font.drawInBatch(Font.java:132) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.gui.Font.drawInBatch(Font.java:128) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.EntityRenderer.renderNameTag(EntityRenderer.java:98) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.player.PlayerRenderer.renderNameTag(PlayerRenderer.java:158) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.player.PlayerRenderer.renderNameTag(PlayerRenderer.java:43) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.EntityRenderer.render(EntityRenderer.java:69) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.LivingEntityRenderer.render(LivingEntityRenderer.java:136) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.player.PlayerRenderer.render(PlayerRenderer.java:62) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.player.PlayerRenderer.render(PlayerRenderer.java:43) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.entity.EntityRenderDispatcher.render(EntityRenderDispatcher.java:129) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.LevelRenderer.renderEntity(LevelRenderer.java:1434) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.LevelRenderer.renderLevel(LevelRenderer.java:1230) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:1056) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:831) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1041) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:661) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at net.minecraft.client.main.Main.main(Main.java:205) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1.jar%2377!/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:569) ~[?:?]
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:38) ~[fmlloader-1.18.1-39.1.0.jar%230!/:?]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.1.0.jar%2310!/:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.1.0.jar%2310!/:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.1.0.jar%2310!/:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.1.0.jar%2310!/:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.1.0.jar%2310!/:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
+[01:34:58] [Server thread/INFO]: <mai_xiyu> fuck
+[01:34:58] [Render thread/INFO]: [CHAT] <mai_xiyu> fuck
+[01:35:23] [Server thread/INFO]: [mai_xiyu: 已将自己的游戏模式设置为生存模式]
+[01:35:23] [Render thread/INFO]: [CHAT] [mai_xiyu: 已将自己的游戏模式设置为生存模式]
+[01:35:24] [Server thread/INFO]: [mai_xiyu: 已将自己的游戏模式设置为创造模式]
+[01:35:24] [Render thread/INFO]: [CHAT] [mai_xiyu: 已将自己的游戏模式设置为创造模式]
+[01:35:26] [Server thread/INFO]: mai_xiyu lost connection: 连接中止
+[01:35:26] [Server thread/INFO]: mai_xiyu退出了游戏
+[01:35:26] [Render thread/INFO]: [CHAT] mai_xiyu退出了游戏
+[01:35:34] [User Authenticator #3/WARN]: Failed to verify username but will let them in anyway!
+[01:35:36] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@42fbd905
+[01:35:36] [Server thread/INFO]: mai_xiyu[/26.157.73.245:29333] logged in with entity id 493 at (-0.9676659921402646, -60.0, 6.223375912819135)
+[01:35:36] [Server thread/INFO]: mai_xiyu加入了游戏
+[01:35:36] [Render thread/INFO]: [CHAT] mai_xiyu加入了游戏
+[01:37:09] [Server thread/INFO]: mai_xiyu lost connection: 连接中止
+[01:37:09] [Server thread/INFO]: mai_xiyu退出了游戏
+[01:37:09] [Render thread/INFO]: [CHAT] mai_xiyu退出了游戏
+[01:37:10] [Render thread/INFO]: Stopping!
+[01:37:10] [Server thread/INFO]: Dev lost connection: 连接中止
+[01:37:10] [Server thread/INFO]: Dev退出了游戏
+[01:37:10] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[01:37:10] [Server thread/INFO]: Stopping server
+[01:37:10] [Server thread/INFO]: Saving players
+[01:37:10] [Server thread/INFO]: Saving worlds
+[01:37:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[01:37:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[01:37:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[01:37:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (新的世界): All chunks are saved
+[01:37:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[01:37:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[01:37:11] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
