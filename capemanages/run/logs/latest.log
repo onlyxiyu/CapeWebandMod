@@ -1,192 +1,48 @@
-[132ÔÂ2025 00:08:51.130] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--username, â¾Óê, --version, 1.20.1-Forge_47.3.0, --gameDir, M:\MCLDownload\Game\.minecraft\., --assetsDir, M:\MCLDownload\Game\.minecraft\.\assets, --assetIndex, 5, --uuid, 3ae590a1131e3c98920efd38f5c02ca6, --accessToken, ????????, --clientId, ${clientid}, --xuid, , --userType, mojang, --versionType, release, --launchTarget, forgeclient, --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412]
-[132ÔÂ2025 00:08:51.138] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 17.0.2+8
-[132ÔÂ2025 00:08:51.140] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.1.0+0+MinecraftChina_10.1.40fc820b starting: java version 17.0.2 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[132ÔÂ2025 00:08:51.189] [main/ERROR] [com.netease.mc.mod.network.common.Library/]: LoadLibrary runtime_path not defined
-[132ÔÂ2025 00:08:51.224] [main/WARN] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Configuration file M:\MCLDownload\Game\.minecraft\config\fml.toml is not correct. Correcting
-[132ÔÂ2025 00:08:51.225] [main/INFO] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to []
-[132ÔÂ2025 00:08:51.226] [main/INFO] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [earlyWindowSquir] was corrected from null to false
-[132ÔÂ2025 00:08:51.226] [main/INFO] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [earlyWindowShowCPU] was corrected from null to false
-[132ÔÂ2025 00:08:51.246] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[132ÔÂ2025 00:08:51.312] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[132ÔÂ2025 00:08:51.502] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[132ÔÂ2025 00:08:51.573] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/M:/MCLDownload/Game/.minecraft/libraries/org/spongepowered/mixin/0.8.5/mixin-0.8.5.jar%23155!/ Service=ModLauncher Env=CLIENT
-[132ÔÂ2025 00:08:51.620] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 561.09, NVIDIA Corporation
-[132ÔÂ2025 00:08:51.801] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file M:\MCLDownload\Game\.minecraft\libraries\net\minecraftforge\fmlcore\1.20.1-47.3.0\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
-[132ÔÂ2025 00:08:51.810] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file M:\MCLDownload\Game\.minecraft\libraries\net\minecraftforge\javafmllanguage\1.20.1-47.3.0\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[132ÔÂ2025 00:08:51.816] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file M:\MCLDownload\Game\.minecraft\libraries\net\minecraftforge\lowcodelanguage\1.20.1-47.3.0\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[132ÔÂ2025 00:08:51.823] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file M:\MCLDownload\Game\.minecraft\libraries\net\minecraftforge\mclanguage\1.20.1-47.3.0\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[132ÔÂ2025 00:08:51.924] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[132ÔÂ2025 00:08:53.228] [main/INFO] [com.netease.mc.mod.network.common.GameHost/]: 
-[132ÔÂ2025 00:08:53.228] [main/INFO] [com.netease.mc.mod.network.common.GameHost/]: 
-[132ÔÂ2025 00:08:53.229] [main/ERROR] [com.netease.mc.mod.network.common.GameHost/]: GameHost
-java.lang.NullPointerException: Cannot read field "GameType" because "com.netease.mc.mod.network.common.GameState.userPropertiesEx" is null
-	at com.netease.mc.mod.network.common.GameState.InitCheck(GameState.java:35) ~[modlauncher-10.0.9.jar:?]
-	at com.netease.mc.mod.network.common.GameHost.Init(GameHost.java:43) ~[modlauncher-10.0.9.jar:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at cpw.mods.modlauncher.Launcher.IntialSocket(Launcher.java:89) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.run(Launcher.java:183) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.main(Launcher.java:128) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-[132ÔÂ2025 00:08:53.244] [main/INFO] [com.netease.mc.mod.network.socket.NetworkSocket/]: My socket: 127.0.0.1:9876
-[132ÔÂ2025 00:08:53.256] [main/INFO] [com.netease.mc.mod.network.socket.NetworkSocket/]: My socket: socket connect fail
-[132ÔÂ2025 00:08:53.256] [main/INFO] [com.netease.mc.mod.network.socket.NetworkSocket/]: Close Game
-[132ÔÂ2025 00:08:53.289] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[132ÔÂ2025 00:08:53.290] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclient' with arguments [--version, 1.20.1-Forge_47.3.0, --gameDir, M:\MCLDownload\Game\.minecraft\., --assetsDir, M:\MCLDownload\Game\.minecraft\.\assets, --uuid, 3ae590a1131e3c98920efd38f5c02ca6, --username, â¾Óê, --assetIndex, 5, --accessToken, ????????, --clientId, ${clientid}, --xuid, , --userType, mojang, --versionType, release]
-[132ÔÂ2025 00:08:56.816] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 127 milliseconds
-[132ÔÂ2025 00:08:58.095] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/M:/MCLDownload/Game/.minecraft/libraries/net/minecraft/client/1.20.1-20230612.114412/client-1.20.1-20230612.114412-srg.jar%23160!/assets/.mcassetsroot' uses unexpected schema
-[132ÔÂ2025 00:08:58.095] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/M:/MCLDownload/Game/.minecraft/libraries/net/minecraft/client/1.20.1-20230612.114412/client-1.20.1-20230612.114412-srg.jar%23160!/data/.mcassetsroot' uses unexpected schema
-[132ÔÂ2025 00:08:58.121] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[132ÔÂ2025 00:09:06.014] [Render thread/ERROR] [net.minecraft.client.Minecraft/]: Failed to verify authentication
-com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
-	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar%2392!/:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar%2392!/:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.<init>(YggdrasilUserApiService.java:55) ~[authlib-4.0.43.jar%2392!/:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createUserApiService(YggdrasilAuthenticationService.java:124) ~[authlib-4.0.43.jar%2392!/:?]
-	at net.minecraft.client.Minecraft.m_193585_(Minecraft.java:649) ~[client-1.20.1-20230612.114412-srg.jar%23160!/:?]
-	at net.minecraft.client.Minecraft.<init>(Minecraft.java:413) ~[client-1.20.1-20230612.114412-srg.jar%23160!/:?]
-	at net.minecraft.client.main.Main.main(Main.java:182) ~[1.20.1-Forge_47.3.0.jar:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at net.minecraftforge.fml.loading.targets.CommonClientLaunchHandler.lambda$makeService$0(CommonClientLaunchHandler.java:25) ~[fmlloader-1.20.1-47.3.0.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.run(Launcher.java:186) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.Launcher.main(Launcher.java:128) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar:?]
-	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[bootstraplauncher-1.1.2.jar:?]
-Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
-	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:85) ~[authlib-4.0.43.jar%2392!/:?]
-	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar%2392!/:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar%2392!/:?]
-	... 20 more
-[132ÔÂ2025 00:09:06.015] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: â¾Óê
-[132ÔÂ2025 00:09:06.077] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[132ÔÂ2025 00:09:06.270] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
-[132ÔÂ2025 00:09:06.270] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
-[132ÔÂ2025 00:09:06.277] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ¹Ø±ÕÓÎÏ·(1)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:06.278] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ËÑË÷Íæ¼Ò(1041)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:06.295] [Connect-Thread/INFO] [kgg.neteasemod.mod.communication.GameCommunicator/]: ÊÕµ½Æô¶¯Æ÷uuid: 9a1ddb2f-da52-4be5-92c9-82b90099738f
-[132ÔÂ2025 00:09:06.315] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ÁĞ³öÄ£×éÁĞ±í(1799)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:06.316] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ÖØĞÂÁ¬½Ó(1796)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:06.317] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ÁĞ³öÄ£×éÁĞ±í(1793)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:06.317] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ½øÈë´æµµ(1538)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:06.319] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ´´½¨µØÍ¼(1540)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:06.339] [modloading-worker-0/INFO] [kgg.neteaselib.ReplyManager/]: ¼ÓÔØÆ¤·ô(2050)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:07.157] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[132ÔÂ2025 00:09:07.182] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file M:\MCLDownload\Game\.minecraft\config\forge-client.toml is not correct. Correcting
-[132ÔÂ2025 00:09:07.184] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client was corrected from null to its default, SimpleCommentedConfig:{}. 
-[132ÔÂ2025 00:09:07.184] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.alwaysSetupTerrainOffThread was corrected from null to its default, false. 
-[132ÔÂ2025 00:09:07.184] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.experimentalForgeLightPipelineEnabled was corrected from null to its default, false. 
-[132ÔÂ2025 00:09:07.184] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.showLoadWarnings was corrected from null to its default, true. 
-[132ÔÂ2025 00:09:07.185] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.useCombinedDepthStencilAttachment was corrected from null to its default, false. 
-[132ÔÂ2025 00:09:07.185] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.compressLanIPv6Addresses was corrected from null to its default, true. 
-[132ÔÂ2025 00:09:07.185] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.calculateAllNormals was corrected from null to its default, false. 
-[132ÔÂ2025 00:09:07.185] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.stabilizeDirectionGetNearest was corrected from null to its default, true. 
-[132ÔÂ2025 00:09:07.309] [Worker-Main-12/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[132ÔÂ2025 00:09:07.335] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[132ÔÂ2025 00:09:09.878] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[132ÔÂ2025 00:09:09.879] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[132ÔÂ2025 00:09:09.925] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on ÑïÉùÆ÷ (Realtek(R) Audio)
-[132ÔÂ2025 00:09:09.926] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[132ÔÂ2025 00:09:10.001] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[132ÔÂ2025 00:09:10.007] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[132ÔÂ2025 00:09:10.007] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[132ÔÂ2025 00:09:10.007] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[132ÔÂ2025 00:09:10.008] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[132ÔÂ2025 00:09:10.010] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[132ÔÂ2025 00:09:10.011] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[132ÔÂ2025 00:09:10.012] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[132ÔÂ2025 00:09:10.012] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[132ÔÂ2025 00:09:10.213] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[132ÔÂ2025 00:09:10.250] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[132ÔÂ2025 00:09:10.251] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[132ÔÂ2025 00:09:10.251] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[132ÔÂ2025 00:09:13.070] [Connect-Thread/INFO] [kgg.neteasemod.mod.communication.GameCommunicator/]: ÉèÖÃÓÎÏ·ºÅ:3, ÓÃ»§Ãû:â¾Óê, ·şÎñ¶Ë¿Ú:24278, ÍøÒ×¶Ë¿Ú:11317
-[132ÔÂ2025 00:09:13.113] [Connect-Thread/INFO] [kgg.neteasemod.mod.communication.GameCommunicator/]: Á¬½ÓÍøÒ×Æô¶¯Æ÷
-[132ÔÂ2025 00:09:13.117] [Connect-Thread/INFO] [kgg.neteaselib.ReplyManager/]: ¸üĞÂÁîÅÆ(5121)»ØÓ¦ ÒÑ×¢²á
-[132ÔÂ2025 00:09:13.117] [Connect-Thread/INFO] [kgg.neteasemod.mod.communication.GameCommunicator/]: ·¢ËÍ¼ÓÔØÍê³ÉÃüÁî
-[132ÔÂ2025 00:09:13.126] [Render thread/INFO] [kgg.neteasemod.mod.PlayManager/]: ½øÈë´æµµ "LanGame-8493154b-1eb3-49d3-b426-5552c158418e"
-[132ÔÂ2025 00:09:14.621] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[132ÔÂ2025 00:09:14.630] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
-[132ÔÂ2025 00:09:14.741] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
-[132ÔÂ2025 00:09:15.114] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: UP_TO_DATE Current: 47.3.0 Target: null
-[132ÔÂ2025 00:09:15.164] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[132ÔÂ2025 00:09:15.164] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[132ÔÂ2025 00:09:15.446] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[132ÔÂ2025 00:09:16.993] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: ×¼±¸Éú³ÉÇøÓòÖĞ£º0%
-[132ÔÂ2025 00:09:16.993] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: ×¼±¸Éú³ÉÇøÓòÖĞ£º0%
-[132ÔÂ2025 00:09:16.993] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: ×¼±¸Éú³ÉÇøÓòÖĞ£º0%
-[132ÔÂ2025 00:09:16.994] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: ×¼±¸Éú³ÉÇøÓòÖĞ£º0%
-[132ÔÂ2025 00:09:17.465] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: ×¼±¸Éú³ÉÇøÓòÖĞ£º78%
-[132ÔÂ2025 00:09:17.533] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[132ÔÂ2025 00:09:17.536] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2088 ms
-[132ÔÂ2025 00:09:17.627] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 32, from 10
-[132ÔÂ2025 00:09:17.628] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 32, from 0
-[132ÔÂ2025 00:09:17.800] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[132ÔÂ2025 00:09:18.441] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[132ÔÂ2025 00:09:18.482] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: â¾Óê[local:E:2dfbd3f4] logged in with entity id 83 at (42.86411547676125, -60.0, 30.903911082204328)
-[132ÔÂ2025 00:09:18.510] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: â¾Óê¼ÓÈëÁËÓÎÏ·
-[132ÔÂ2025 00:09:20.582] [Render thread/INFO] [net.minecraft.server.network.ServerConnectionListener/]: Using default channel type
-[132ÔÂ2025 00:09:20.598] [Render thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Started serving on 24407
-[132ÔÂ2025 00:09:20.612] [Render thread/INFO] [kgg.neteasemod.mod.PlayManager/]: »Ø¸´¿ª·ÅÊÀ½ç
-[132ÔÂ2025 00:09:20.615] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ÍøÒ×"¹Ù·½Ä£×é"¸Ä°æ×÷Õß: KGG_Xing_Kong\nQQÈº: 691870136
-[132ÔÂ2025 00:09:20.844] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 3 advancements
-[132ÔÂ2025 00:09:21.099] [Worker-Main-4/INFO] [kgg.neteasemod.mod.SkinHandler/]: ÏòÆô¶¯Æ÷»ñÈ¡Æ¤·ô: â¾Óê
-[132ÔÂ2025 00:09:21.109] [NeteaseSocket-Thread/INFO] [kgg.neteasemod.mod.SkinHandler/]: ÊÕµ½Æ¤·ô: Result[name=â¾Óê, skinPath=M:\MCLDownload\cache\skin\skin_4659086017911290859.png, capePath=, isSlim=1]
-[132ÔÂ2025 00:09:24.568] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:09:34.143] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:09:34.501] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:09:34.780] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:09:59.478] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Not Secure] <â¾Óê> 1
-[132ÔÂ2025 00:09:59.505] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] <â¾Óê> 1
-[132ÔÂ2025 00:10:00.717] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Not Secure] <â¾Óê> 1
-[132ÔÂ2025 00:10:00.726] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] <â¾Óê> 1
-[132ÔÂ2025 00:10:01.905] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:02.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:02.554] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:02.882] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:03.217] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:03.506] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:03.727] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:04.075] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:04.942] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:10:55.628] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:01.600] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:01.929] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:02.220] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:02.532] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:02.779] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:03.026] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:03.313] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:04.085] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:04.370] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:04.607] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Cape] ÕıÔÚÉèÖÃ×Ô¶¨ÒåÅû·ç...
-[132ÔÂ2025 00:11:09.187] [Render thread/INFO] [kgg.neteasemod.mod.communication.GameCommunicator/]: ·¢ËÍÍË³öÃüÁî
-[132ÔÂ2025 00:11:09.187] [Render thread/INFO] [kgg.neteaselib.NeteaseSocket/]: ÓëÆô¶¯Æ÷¶Ï¿ªÁ¬½Ó
-[132ÔÂ2025 00:11:09.200] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: â¾Óê lost connection: Á¬½ÓÖĞ¶Ï
-[132ÔÂ2025 00:11:09.201] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: â¾ÓêÍË³öÁËÓÎÏ·
-[132ÔÂ2025 00:11:09.213] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[132ÔÂ2025 00:11:09.234] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[132ÔÂ2025 00:11:09.235] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[132ÔÂ2025 00:11:09.235] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[132ÔÂ2025 00:11:10.010] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[453944]'/minecraft:overworld
-[132ÔÂ2025 00:11:11.493] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[453944]'/minecraft:the_end
-[132ÔÂ2025 00:11:11.495] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[453944]'/minecraft:the_nether
-[132ÔÂ2025 00:11:11.517] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (LanGame-8493154b-1eb3-49d3-b426-5552c158418e): All chunks are saved
-[132ÔÂ2025 00:11:11.517] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[132ÔÂ2025 00:11:11.517] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[132ÔÂ2025 00:11:11.518] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[132ÔÂ2025 00:11:11.990] [Render thread/INFO] [kgg.neteasemod.mod.communication.GameCommunicator/]: ·¢ËÍÍË³öÃüÁî
-[132ÔÂ2025 00:11:19.356] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
-[132ÔÂ2025 00:11:19.421] [Render thread/INFO] [kgg.neteasemod.mod.communication.GameCommunicator/]: ·¢ËÍÍË³öÃüÁî
+[142æœˆ2025 01:38:47.184] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, E:\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, capemanages.mixins.json]
+[142æœˆ2025 01:38:47.190] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Amazon.com Inc.; OS Windows 11 arch amd64 version 10.0
+[142æœˆ2025 01:38:47.338] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[142æœˆ2025 01:38:47.426] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[142æœˆ2025 01:38:47.690] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[142æœˆ2025 01:38:47.808] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/E:/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[142æœˆ2025 01:38:47.883] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 561.09, NVIDIA Corporation
+[142æœˆ2025 01:38:48.243] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file E:\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[142æœˆ2025 01:38:48.250] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file E:\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[142æœˆ2025 01:38:48.258] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file E:\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[142æœˆ2025 01:38:48.265] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file E:\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
+[142æœˆ2025 01:38:48.387] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[142æœˆ2025 01:38:50.307] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[142æœˆ2025 01:38:50.311] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, E:\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
+[142æœˆ2025 01:38:50.601] [main/WARN] [mixin/]: Reference map 'capemanages.refmap.json' for capemanages.mixins.json could not be read. If this is a development environment you can ignore this message
+[142æœˆ2025 01:38:55.870] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 252 milliseconds
+[142æœˆ2025 01:38:58.511] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/E:/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[142æœˆ2025 01:38:58.512] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/E:/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_official_1.20.1/forge-1.20.1-47.3.0_mapped_official_1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[142æœˆ2025 01:38:58.545] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[142æœˆ2025 01:38:58.557] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[142æœˆ2025 01:38:58.788] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[142æœˆ2025 01:38:59.150] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
+[142æœˆ2025 01:38:59.150] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
+[142æœˆ2025 01:39:00.830] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [capemanages]
+[142æœˆ2025 01:39:01.020] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[142æœˆ2025 01:39:01.072] [Worker-Main-3/INFO] [org.xiyu.yee.capemanages.Capemanages/]: Registering network channels...
+[142æœˆ2025 01:39:01.094] [Worker-Main-3/INFO] [org.xiyu.yee.capemanages.Capemanages/]: Initializing Cape Manager...
+[142æœˆ2025 01:39:01.226] [Worker-Main-14/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[142æœˆ2025 01:39:01.230] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[142æœˆ2025 01:39:02.980] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: UP_TO_DATE Current: 47.3.0 Target: null
+[142æœˆ2025 01:39:05.843] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[142æœˆ2025 01:39:05.843] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[142æœˆ2025 01:39:05.910] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on æ‰¬å£°å™¨ (Realtek(R) Audio)
+[142æœˆ2025 01:39:05.911] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[142æœˆ2025 01:39:06.048] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[142æœˆ2025 01:39:06.057] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[142æœˆ2025 01:39:06.059] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[142æœˆ2025 01:39:06.060] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[142æœˆ2025 01:39:06.061] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[142æœˆ2025 01:39:06.065] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[142æœˆ2025 01:39:06.067] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[142æœˆ2025 01:39:06.067] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[142æœˆ2025 01:39:06.069] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[142æœˆ2025 01:39:06.420] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[142æœˆ2025 01:39:06.477] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[142æœˆ2025 01:39:06.479] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[142æœˆ2025 01:39:06.479] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[142æœˆ2025 01:39:07.235] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id

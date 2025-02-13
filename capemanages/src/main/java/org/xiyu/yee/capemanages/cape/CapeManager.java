@@ -508,21 +508,10 @@ public class CapeManager {
         if (NETWORK != null) {
             System.out.println("Broadcasting cape update for " + playerName);
             CapeUpdatePacket packet = new CapeUpdatePacket(playerName, url);
-            
-            // 发送到服务器
             NETWORK.sendToServer(packet);
             
             // 在本地应用更新
             applyUpdate(playerName, url);
-            
-            // 保存到配置文件
-            try {
-                Path gameDir = Minecraft.getInstance().gameDirectory.toPath();
-                Path capePath = gameDir.resolve("cape");
-                ensurePlayerConfig(capePath, playerName);
-            } catch (Exception e) {
-                System.out.println("Failed to save cape state: " + e.getMessage());
-            }
         }
     }
     
