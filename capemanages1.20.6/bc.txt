@@ -1,0 +1,61 @@
+> Task :compileJava FAILED
+注: SpongePowered MIXIN Annotation Processor Version=0.8.5 (MixinGradle Version=0.7)
+注: Supported obfuscation types: ObfuscationServiceMCP supports [notch] ObfuscationServiceFG3 supports [searge]
+注: Loading searge mappings from C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\build\createMcpToSrg\output.tsrg
+注: Writing refmap to C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\build\tmp\compileJava\compileJava-refmap.json
+注: Writing refmap to C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\build\tmp\compileJava\compileJava-refmap.json
+注: Writing searge composite mappings to C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\build\tmp\compileJava\compileJava-mappings.tsrg
+注: Writing refmap to C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\build\tmp\compileJava\compileJava-refmap.json
+注: Writing refmap to C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\build\tmp\compileJava\compileJava-refmap.json
+注: Writing searge composite mappings to C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\build\tmp\compileJava\compileJava-mappings.tsrg
+C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\cape\CapeManager.java:499: 错误: 对于send(CapeUpdatePacket), 找不到合适的方法
+            NETWORK.send(packet);
+                   ^
+    方法 Channel.send(Object,Connection)不适用
+      (实际参数列表和形式参数列表长度不同)
+    方法 Channel.send(Object,PacketTarget)不适用
+      (实际参数列表和形式参数列表长度不同)
+C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\cape\CapeManager.java:747: 错误: 对于send(CapeUpdatePacket), 找不到合适的方法
+                        NETWORK.send(packet);
+                               ^
+    方法 Channel.send(Object,Connection)不适用
+      (实际参数列表和形式参数列表长度不同)
+    方法 Channel.send(Object,PacketTarget)不适用
+      (实际参数列表和形式参数列表长度不同)
+C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\cape\CapeManager.java:827: 错误: 对于send(CapeUpdatePacket), 找不到合适的方法
+            NETWORK.send(packet);
+                   ^
+    方法 Channel.send(Object,Connection)不适用
+      (实际参数列表和形式参数列表长度不同)
+    方法 Channel.send(Object,PacketTarget)不适用
+      (实际参数列表和形式参数列表长度不同)
+C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\cape\CapeManager.java:834: 错误: 无法将类 CapeManager中的方法 sendCurrentCapeState应用到给定类型;
+        sendCurrentCapeState(playerName);
+        ^
+  需要: String,ServerPlayer
+  找到:    String
+  原因: 实际参数列表和形式参数列表长度不同
+C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\cape\CapeManager.java:842: 错误: 无法将类 CapeManager中的方法 sendCurrentCapeState应用到给定类型;
+        sendCurrentCapeState(playerName);
+        ^
+  需要: String,ServerPlayer
+  找到:    String
+  原因: 实际参数列表和形式参数列表长度不同
+C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\command\CapeCommand.java:141: 错误: 对于send(CapeUpdatePacket), 找不到合适的方法
+                    CapeManager.NETWORK.send(packet);
+                                       ^
+    方法 Channel.send(Object,Connection)不适用
+      (实际参数列表和形式参数列表长度不同)
+    方法 Channel.send(Object,PacketTarget)不适用
+      (实际参数列表和形式参数列表长度不同)
+C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\command\CapeCommand.java:154: 错误: 对于send(CapeUpdatePacket), 找不到合适的方法
+                                CapeManager.NETWORK.send(packet);
+                                                   ^
+    方法 Channel.send(Object,Connection)不适用
+      (实际参数列表和形式参数列表长度不同)
+    方法 Channel.send(Object,PacketTarget)不适用
+      (实际参数列表和形式参数列表长度不同)
+注: C:\Users\xiyu\Desktop\新建文件夹\capespringboot\capemanages1.20.6\src\main\java\org\xiyu\yee\capemanages\cape\CapeManager.java使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+7 个错误
+

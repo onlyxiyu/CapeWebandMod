@@ -1,2 +1,5 @@
 /cape custom
 /cape set bacon
+/cape
+/cape set bacon
+/cape custom
