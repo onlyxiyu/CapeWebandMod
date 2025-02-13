@@ -3,3 +3,8 @@
 /cape
 /cape set bacon
 /cape custom
+/cape set bacon
+/cape custom
+/cape set year_15
+/cape set party
+/cape set eyeblossom

@@ -22,7 +22,7 @@
              String playerName = playerInfo.getProfile().getName();
              ResourceLocation customSkinLocation = CapeManager.INSTANCE.getPlayerCape(playerName);
              if (customSkinLocation != null) {
-                 PlayerSkin customSkin = new PlayerSkin(customSkinLocation, playerInfo.getSkin().textureUrl(), customSkinLocation, customSkinLocation, playerInfo.getSkin().model(), playerInfo.getSkin().secure());
+                 PlayerSkin customSkin = new PlayerSkin(playerInfo.getSkin().texture(), playerInfo.getSkin().textureUrl(), customSkinLocation, customSkinLocation, playerInfo.getSkin().model(), playerInfo.getSkin().secure());
                  cir.setReturnValue(customSkin);
              }
          }
