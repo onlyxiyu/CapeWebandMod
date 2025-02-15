@@ -35,6 +35,8 @@ import java.net.http.HttpResponse;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
+import static com.mojang.text2speech.Narrator.LOGGER;
+
 public class CapeManager {
     public static final CapeManager INSTANCE = new CapeManager();
     private static final String CHANNEL_NAME ="cape_channel"; ;
@@ -51,44 +53,37 @@ public class CapeManager {
     private static final long CACHE_DURATION = 1000 * 60 * 30; // 30分钟缓存
 
     public void init() {
-        System.out.println("Initializing Cape Manager...");
+        try {
+            // 获取Minecraft游戏目录
+            Path gameDir = Minecraft.getInstance().gameDirectory.toPath();
+            // 创建cape目录
+            Path capeDir = gameDir.resolve("cape");
+            Files.createDirectories(capeDir);
+            
+            // 创建缓存目录
+            Path cacheDir = capeDir.resolve("cache");
+            Files.createDirectories(cacheDir);
+            
+            LOGGER.info("Cape directories initialized at: {}", capeDir);
+        } catch (IOException e) {
+            LOGGER.error("Failed to initialize cape directories", e);
+        }
+
         // 获取游戏根目录并打印
         Path gameDir = Minecraft.getInstance().gameDirectory.toPath();
         System.out.println("Game directory: " + gameDir.toAbsolutePath());
-
-        // 创建cape文件夹 - 使用绝对路径
-        Path capePath = gameDir.toAbsolutePath().resolve("cape");
-        System.out.println("Attempting to create cape directory at: " + capePath);
-
-        try {
-            if (!Files.exists(capePath)) {
-                Files.createDirectories(capePath);
-                System.out.println("Successfully created cape directory");
-            } else {
-                System.out.println("Cape directory already exists");
-            }
-        } catch (Exception e) {
-            System.out.println("Failed to create cape directory: " + e.getMessage());
-            // 尝试使用File API作为备选方案
-            File capeDir = new File(gameDir.toFile(), "cape");
-            if (!capeDir.exists() && capeDir.mkdirs()) {
-                System.out.println("Created cape directory using File API");
-            }
-        }
 
         // 获取当前玩家名称
         String playerName = Minecraft.getInstance().getUser().getName();
         System.out.println("Current player: " + playerName);
 
         // 确保玩家配置文件存在
-        ensurePlayerConfig(capePath, playerName);
+        ensurePlayerConfig(gameDir.resolve("cape"), playerName);
 
         loadCapes();
 
         // 延迟加载玩家披风
-        Minecraft.getInstance().tell(() -> {
-            loadLastUsedCape();
-        });
+        Minecraft.getInstance().tell(this::loadLastUsedCape);
     }
 
     public static void registerNetworking() {
@@ -467,44 +462,46 @@ public class CapeManager {
     }
 
     private void applyTextureFromBytes(byte[] imageData, ResourceLocation location) {
-        try {
-            // 1.20.6中使用新的NativeImage API
-            NativeImage image = NativeImage.read(imageData);
-
-            // 在主线程上注册纹理
-            Minecraft.getInstance().execute(() -> {
-                // 先检查并释放旧的纹理
-                var textureManager = Minecraft.getInstance().getTextureManager();
-                textureManager.getTexture(location, null).close(); // 新的关闭方式
-
-                // 使用新的纹理注册API
+        Minecraft.getInstance().execute(() -> {
+            try {
+                // 先检查并移除已存在的纹理
+                if (Minecraft.getInstance().getTextureManager().getTexture(location) != null) {
+                    Minecraft.getInstance().getTextureManager().release(location);
+                }
+                
+                // 创建新的纹理
+                NativeImage image = NativeImage.read(new ByteArrayInputStream(imageData));
                 DynamicTexture texture = new DynamicTexture(image);
-                textureManager.register(location, texture);
-                System.out.println("Successfully registered texture: " + location);
-            });
-        } catch (Exception e) {
-            System.out.println("Failed to apply texture: " + e.getMessage());
-            e.printStackTrace();
+                
+                // 注册新纹理
+                Minecraft.getInstance().getTextureManager().register(location, texture);
+                
+                System.out.println("Successfully applied texture: " + location);
+            } catch (IOException e) {
+                System.err.println("Failed to apply texture: " + e.getMessage());
+            }
+        });
+    }
+
+    private void broadcastCapeUpdate(String playerName, String url) {
+        if (NETWORK != null) {
+            System.out.println("Broadcasting cape update for " + playerName);
+            CapeUpdatePacket packet = new CapeUpdatePacket(playerName, url);
+
+            // Ensure the server instance is available
+            MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
+            if (server != null) {
+
+                // waaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                NETWORK.send(PacketDistributor.ALL.noArg(), () -> packet);
+                // Apply the update locally
+                applyUpdate(playerName, url);
+            } else {
+                System.out.println("Server instance is not available. Cannot broadcast cape update.");
+            }
         }
     }
 
-
- private void broadcastCapeUpdate(String playerName, String url) {
-     if (NETWORK != null) {
-         System.out.println("Broadcasting cape update for " + playerName);
-         CapeUpdatePacket packet = new CapeUpdatePacket(playerName, url);
-
-         // Ensure the server instance is available
-         MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
-         if (server != null) {
-             NETWORK.send(new CapeUpdatePacket(playerName,url),PacketDistributor.ALL.noArg());
-             // Apply the update locally
-             applyUpdate(playerName, url);
-         } else {
-             System.out.println("Server instance is not available. Cannot broadcast cape update.");
-         }
-     }
- }
     // 修改handleUpdatePacket方法
     public void handleUpdatePacket(String playerName, String url) {
         System.out.println("Received cape update for " + playerName + ": " + url);
@@ -562,12 +559,12 @@ public class CapeManager {
     }
 
     // 修改sendCurrentCapeState方法
-    private void sendCurrentCapeState(String playerName) {
+    public void sendCurrentCapeState(String playerName) {
         String capeUrl = getCapeUrl(playerName);
         if (capeUrl != null) {
-            System.out.println("Sending current cape state for " + playerName + ": " + capeUrl);
+            System.out.println("Sending current cape state for: " + playerName);
             CapeUpdatePacket packet = new CapeUpdatePacket(playerName, capeUrl);
-            NETWORK.send(new CapeUpdatePacket(playerName, capeUrl),PacketDistributor.PLAYER.noArg());
+            NETWORK.send(PacketDistributor.ALL.noArg(), packet);
         }
     }
 
@@ -726,19 +723,19 @@ public class CapeManager {
     }
 
     // 修改syncCapesForNewPlayer方法
-    public void syncCapesForNewPlayer(String newPlayerName) {
+    public void syncCapesForNewPlayer(String playerName) {
         if (Minecraft.getInstance().level != null) {
-            Minecraft.getInstance().level.players().forEach(player -> {
-                String playerName = player.getName().getString();
-                if (!playerName.equals(newPlayerName)) {
-                    String capeUrl = getCapeUrl(playerName);
+            for (var player : Minecraft.getInstance().level.players()) {
+                String otherPlayerName = player.getName().getString();
+                if (!otherPlayerName.equals(playerName)) {
+                    String capeUrl = getCapeUrl(otherPlayerName);
                     if (capeUrl != null) {
-                        System.out.println("Syncing cape for player " + playerName + " to new player " + newPlayerName);
-                        CapeUpdatePacket packet = new CapeUpdatePacket(playerName, capeUrl);
-                        NETWORK.send(new CapeUpdatePacket(playerName, capeUrl), PacketDistributor.PLAYER.noArg());
+                        System.out.println("Syncing cape for player: " + otherPlayerName);
+                        CapeUpdatePacket packet = new CapeUpdatePacket(otherPlayerName, capeUrl);
+                        NETWORK.send(PacketDistributor.ALL.noArg(), packet);
                     }
                 }
-            });
+            }
         }
     }
 
@@ -815,7 +812,7 @@ public class CapeManager {
         if (capeUrl != null) {
             System.out.println("Syncing current player cape: " + currentPlayerName);
             CapeUpdatePacket packet = new CapeUpdatePacket(currentPlayerName, capeUrl);
-            NETWORK.send(new CapeUpdatePacket(currentPlayerName, capeUrl), PacketDistributor.ALL.noArg());
+            NETWORK.send(PacketDistributor.ALL.noArg(), packet);
         }
     }
 
@@ -831,5 +828,25 @@ public class CapeManager {
         System.out.println("Switching cape for " + playerName + " to: " + url);
         setPlayerCape(playerName, url, true);
 //        sendCurrentCapeState(playerName);
+    }
+
+    public void createPlayerCapeJson(String playerName) {
+        try {
+            Path capeDir = Minecraft.getInstance().gameDirectory.toPath().resolve("cape");
+            Path playerJson = capeDir.resolve(playerName + ".json");
+            
+            if (!Files.exists(playerJson)) {
+                JsonObject json = new JsonObject();
+                json.addProperty("type", "custom");
+                json.addProperty("name", "custom");
+                
+                try (BufferedWriter writer = Files.newBufferedWriter(playerJson)) {
+                    new Gson().toJson(json, writer);
+                }
+                LOGGER.info("Created cape config for player: {}", playerName);
+            }
+        } catch (IOException e) {
+            LOGGER.error("Failed to create cape config for player: {}", playerName, e);
+        }
     }
 } 

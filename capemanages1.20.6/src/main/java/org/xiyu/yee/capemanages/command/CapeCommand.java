@@ -12,6 +12,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
+import org.apache.logging.log4j.LogManager;
 import org.xiyu.yee.capemanages.cape.CapeManager;
 import org.xiyu.yee.capemanages.cape.CapeType;
 import net.minecraft.server.level.ServerPlayer;
@@ -161,6 +162,9 @@ public class CapeCommand {
                 context.getSource().sendSuccess(() -> Component.literal(PREFIX + "§a披风同步完成"), false);
                 return 1;
             } catch (Exception e) {
+                // 主播会不会打印错误日志
+                LogManager.getLogger().error("曦鱼的披风报错了（KGG超级错误捕捉器）", e);
+                e.printStackTrace();  // 这个也行啊
                 context.getSource().sendFailure(Component.literal(ERROR + "§c同步披风时出错: §e" + e.getMessage()));
                 return 0;
             }

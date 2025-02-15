@@ -14,8 +14,6 @@
 	experimentalForgeLightPipelineEnabled = false
 	#When enabled, Forge will show any warnings that occurred during loading.
 	showLoadWarnings = true
-	#[DEPRECATED] Does nothing anymore, IPv6 addresses will be compressed always
-	compressLanIPv6Addresses = true
 	#When enabled, a slightly biased Direction#getNearest calculation will be used to prevent normal fighting on 45 degree angle faces.
 	stabilizeDirectionGetNearest = true
 	#Set to true to use a combined DEPTH_STENCIL attachment instead of two separate ones.

@@ -24,3 +24,9 @@
 /attribute 33ea25d3-aceb-4385-b3b1-718b19cc8b3a minecraft:generic.fall_damage_multiplier base set 0.01
 /setblock 733 -61 -1681 minecraft:water
 /fill ~ ~ ~ ~ ~ ~ water
+/cape custom
+/cape
+/cape help
+/cape list
+/cape update
+/cape custom
